@@ -431,9 +431,10 @@ select {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 4px;
+  gap: 6px;
   color: var(--c-text-secondary);
-  font-size: 13px;
+  font-size: 12px;
+  font-weight: 500;
   cursor: pointer;
   transition: all 0.2s;
 }
@@ -441,6 +442,10 @@ select {
 .photo-add-btn:hover {
   border-color: var(--c-primary);
   color: var(--c-primary);
+}
+
+.photo-add-btn:active {
+  background: var(--c-border);
 }
 
 .photo-add-btn input {

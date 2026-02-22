@@ -18,6 +18,8 @@
     "title": "Fotos",
     "subtitle": "Afegeix fins a 5 fotos de l'abocador",
     "add": "Afegir foto",
+    "takePhoto": "Fer foto",
+    "fromGallery": "Galeria",
     "remove": "Eliminar",
     "required": "Cal almenys una foto",
     "maxReached": "M\u00e0xim 5 fotos",

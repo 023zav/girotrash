@@ -10,7 +10,8 @@ interface Props {
 
 export default function PhotoCapture({ photos, onPhotosChange }: Props) {
   const { t } = useTranslation();
-  const inputRef = useRef<HTMLInputElement>(null);
+  const cameraInputRef = useRef<HTMLInputElement>(null);
+  const galleryInputRef = useRef<HTMLInputElement>(null);
   const [compressing, setCompressing] = useState(false);
 
   async function handleFiles(e: React.ChangeEvent<HTMLInputElement>) {
@@ -32,7 +33,8 @@ export default function PhotoCapture({ photos, onPhotosChange }: Props) {
       console.error('Compression error:', err);
     } finally {
       setCompressing(false);
-      if (inputRef.current) inputRef.current.value = '';
+      if (cameraInputRef.current) cameraInputRef.current.value = '';
+      if (galleryInputRef.current) galleryInputRef.current.value = '';
     }
   }
 
@@ -61,40 +63,64 @@ export default function PhotoCapture({ photos, onPhotosChange }: Props) {
           </div>
         ))}
 
-        {canAddMore && (
-          <label className="photo-add-btn">
-            <input
-              ref={inputRef}
-              type="file"
-              accept="image/*"
-              capture="environment"
-              multiple
-              onChange={handleFiles}
-              disabled={compressing}
-            />
-            {compressing ? (
-              <>
-                <div className="spinner dark" />
-                <span>{t('photos.compressing')}</span>
-              </>
-            ) : (
-              <>
-                <svg
-                  width="32"
-                  height="32"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="1.5"
-                >
-                  <rect x="3" y="3" width="18" height="18" rx="2" />
-                  <line x1="12" y1="8" x2="12" y2="16" />
-                  <line x1="8" y1="12" x2="16" y2="12" />
-                </svg>
-                <span>{t('photos.add')}</span>
-              </>
-            )}
-          </label>
+        {canAddMore && !compressing && (
+          <>
+            {/* Take photo with camera */}
+            <label className="photo-add-btn">
+              <input
+                ref={cameraInputRef}
+                type="file"
+                accept="image/*"
+                capture="environment"
+                onChange={handleFiles}
+                disabled={compressing}
+              />
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              >
+                <path d="M23 19a2 2 0 01-2 2H3a2 2 0 01-2-2V8a2 2 0 012-2h4l2-3h6l2 3h4a2 2 0 012 2z" />
+                <circle cx="12" cy="13" r="4" />
+              </svg>
+              <span>{t('photos.takePhoto')}</span>
+            </label>
+
+            {/* Choose from gallery */}
+            <label className="photo-add-btn">
+              <input
+                ref={galleryInputRef}
+                type="file"
+                accept="image/*"
+                multiple
+                onChange={handleFiles}
+                disabled={compressing}
+              />
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              >
+                <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+                <circle cx="8.5" cy="8.5" r="1.5" />
+                <polyline points="21 15 16 10 5 21" />
+              </svg>
+              <span>{t('photos.fromGallery')}</span>
+            </label>
+          </>
+        )}
+
+        {compressing && canAddMore && (
+          <div className="photo-add-btn" style={{ cursor: 'default' }}>
+            <div className="spinner dark" />
+            <span>{t('photos.compressing')}</span>
+          </div>
         )}
       </div>
 

@@ -18,6 +18,8 @@
     "title": "Fotos",
     "subtitle": "A\u00f1ade hasta 5 fotos del vertedero",
     "add": "A\u00f1adir foto",
+    "takePhoto": "Hacer foto",
+    "fromGallery": "Galer\u00eda",
     "remove": "Eliminar",
     "required": "Se necesita al menos una foto",
     "maxReached": "M\u00e1ximo 5 fotos",

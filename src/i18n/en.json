@@ -18,6 +18,8 @@
     "title": "Photos",
     "subtitle": "Add up to 5 photos of the dump",
     "add": "Add photo",
+    "takePhoto": "Take photo",
+    "fromGallery": "Gallery",
     "remove": "Remove",
     "required": "At least one photo is required",
     "maxReached": "Maximum 5 photos",
