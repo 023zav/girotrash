@@ -66,7 +66,7 @@ Deno.serve(async (req) => {
     // ── Call Nominatim ──────────────────────────────────────────────
     const userAgent =
       Deno.env.get('NOMINATIM_USER_AGENT') ||
-      'GiroTrash/1.0 (contact@girotrash.app)';
+      'GironaNeta/1.0 (hola@gironaneta.cat)';
 
     const url = new URL(NOMINATIM_URL);
     url.searchParams.set('format', 'json');

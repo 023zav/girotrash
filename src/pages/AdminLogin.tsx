@@ -62,7 +62,7 @@ export default function AdminLogin() {
     <div className="admin-login">
       <LanguageBar />
       <div className="admin-login-card">
-        <h1>GiroTrash Admin</h1>
+        <h1>Girona Neta Admin</h1>
         <form onSubmit={handleLogin}>
           <div className="form-group">
             <label className="form-label">{t('admin.email')}</label>

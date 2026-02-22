@@ -9,8 +9,8 @@ export default defineConfig({
       registerType: 'autoUpdate',
       includeAssets: ['favicon.svg'],
       manifest: {
-        name: 'GiroTrash',
-        short_name: 'GiroTrash',
+        name: 'Girona Neta',
+        short_name: 'Girona Neta',
         description: "Reporta abocadors il\u00b7legals a Girona",
         theme_color: '#2d6a4f',
         background_color: '#f8f9fa',

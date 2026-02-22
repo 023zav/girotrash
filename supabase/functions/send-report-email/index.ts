@@ -18,8 +18,8 @@ const EMAIL_TEMPLATES = {
   ca: {
     subject: (hazardous: boolean) =>
       hazardous
-        ? '⚠ Report d\'abocador il·legal (materials perillosos) — GiroTrash'
-        : 'Report d\'abocador il·legal — GiroTrash',
+        ? '⚠ Report d\'abocador il·legal (materials perillosos) — Girona Neta'
+        : 'Report d\'abocador il·legal — Girona Neta',
     body: (report: ReportData) => `Bon dia,
 
 Us escrivim per comunicar-vos la detecció d'un abocador il·legal dins del terme municipal de Girona.
@@ -38,12 +38,12 @@ ${report.potentially_hazardous ? '⚠ ATENCIÓ: El reportant ha indicat que podr
 S'adjunten ${report.photo_count} foto${report.photo_count > 1 ? 's' : ''} de l'abocador.
 
 ---
-Aquest report ha estat enviat des de l'aplicació GiroTrash.
+Aquest report ha estat enviat des de l'aplicació Girona Neta (gironaneta.cat).
 Codi del report: ${report.id}
 Data del report: ${new Date(report.created_at).toLocaleString('ca-ES', { timeZone: 'Europe/Madrid' })}
 
 Gràcies per la vostra atenció.
-GiroTrash — Girona neta`,
+Girona Neta — gironaneta.cat`,
   },
 };
 
@@ -186,10 +186,10 @@ Deno.serve(async (req) => {
     // ── Send via Resend ─────────────────────────────────────────────
     // Resend requires a verified domain for the "from" address.
     // Use a placeholder; replace with your verified domain.
-    const fromEmail = Deno.env.get('RESEND_FROM_EMAIL') || 'girotrash@resend.dev';
+    const fromEmail = Deno.env.get('RESEND_FROM_EMAIL') || 'noreply@gironaneta.cat';
 
     const resendPayload: Record<string, unknown> = {
-      from: `GiroTrash <${fromEmail}>`,
+      from: `Girona Neta <${fromEmail}>`,
       to: [RECIPIENT_EMAIL],
       subject: emailSubject,
       text: emailBody,
