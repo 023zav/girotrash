@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:web.girona.cat)",
+      "WebFetch(domain:www.girona.cat)",
+      "WebFetch(domain:seu.girona.cat)",
+      "Bash(wc:*)",
+      "Bash(npm create:*)",
+      "Bash(npx --yes create-vite@latest:*)",
+      "Bash(npm install:*)",
+      "Bash(npm ls:*)",
+      "Bash(npx tsc:*)",
+      "Bash(npm run build:*)",
+      "Bash(git -C /Users/aleksandrszavoloks/Girotrash config user.name)",
+      "Bash(gh auth status:*)",
+      "Bash(brew --prefix:*)",
+      "Bash(/opt/homebrew/bin/gh auth status)",
+      "Bash(brew install:*)",
+      "Bash(git -C /Users/aleksandrszavoloks/Girotrash remote -v)",
+      "Bash(git config:*)",
+      "Bash(git init:*)",
+      "Bash(git add:*)"
+    ]
+  }
+}

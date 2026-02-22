@@ -1,0 +1,102 @@
+{
+  "app": {
+    "title": "GiroTrash",
+    "subtitle": "Reporta abocadors il\u00b7legals a Girona"
+  },
+  "map": {
+    "locating": "Obtenint ubicaci\u00f3...",
+    "locationError": "No s'ha pogut obtenir la ubicaci\u00f3. Activa la geolocalitzaci\u00f3.",
+    "outsideArea": "Ets fora de la zona de servei de Girona (5 km). Mou el marcador dins de la zona.",
+    "tapToPlace": "Toca el mapa per marcar l'abocador",
+    "dragToAdjust": "Arrossega el marcador per ajustar",
+    "retry": "Reintentar",
+    "continue": "Continuar",
+    "insideArea": "Dins de la zona de servei",
+    "locateMe": "Localitza'm"
+  },
+  "photos": {
+    "title": "Fotos",
+    "subtitle": "Afegeix fins a 5 fotos de l'abocador",
+    "add": "Afegir foto",
+    "remove": "Eliminar",
+    "required": "Cal almenys una foto",
+    "maxReached": "M\u00e0xim 5 fotos",
+    "compressing": "Comprimint...",
+    "tooLarge": "La foto \u00e9s massa gran",
+    "back": "Enrere",
+    "continue": "Continuar",
+    "count": "{{count}}/5 fotos"
+  },
+  "details": {
+    "title": "Detalls",
+    "description": "Descripci\u00f3",
+    "descriptionPlaceholder": "Descriu l'abocador: tipus de residus, mida aproximada, accessibilitat...",
+    "hazardous": "Potencialment perillosos",
+    "hazardousHelp": "Cont\u00e9 materials perillosos (amiant, productes qu\u00edmics, etc.)",
+    "back": "Enrere",
+    "submit": "Enviar report",
+    "submitting": "Enviant..."
+  },
+  "confirm": {
+    "title": "Report enviat!",
+    "message": "Gr\u00e0cies per contribuir a mantenir Girona neta. El teu report ser\u00e0 revisat per l'equip.",
+    "status": "Pendent de revisi\u00f3",
+    "reportCode": "Codi del report",
+    "newReport": "Nou report",
+    "copyCode": "Copiar codi"
+  },
+  "errors": {
+    "generic": "S'ha produ\u00eft un error. Torna-ho a provar.",
+    "network": "Error de connexi\u00f3. Comprova la teva connexi\u00f3 a internet.",
+    "outsideArea": "La ubicaci\u00f3 est\u00e0 fora de la zona de servei de Girona.",
+    "tooManyRequests": "Has enviat massa reports. Espera una estona.",
+    "uploadFailed": "Error pujant les fotos. Torna-ho a provar.",
+    "noPhotos": "Cal afegir almenys una foto.",
+    "noLocation": "Cal seleccionar una ubicaci\u00f3 al mapa."
+  },
+  "admin": {
+    "login": "Iniciar sessi\u00f3",
+    "logout": "Tancar sessi\u00f3",
+    "email": "Correu electr\u00f2nic",
+    "password": "Contrasenya",
+    "loginError": "Error d'autenticaci\u00f3. Comprova les credencials.",
+    "notAdmin": "No tens permisos d'administrador.",
+    "dashboard": "Panell d'administraci\u00f3",
+    "pending": "Pendents",
+    "sent": "Enviats",
+    "rejected": "Rebutjats",
+    "all": "Tots",
+    "noReports": "No hi ha reports.",
+    "approve": "Aprovar i enviar",
+    "reject": "Rebutjar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "save": "Desar",
+    "cancel": "Cancel\u00b7lar",
+    "confirmDelete": "Segur que vols eliminar aquest report?",
+    "confirmApprove": "Aprovar i enviar el report a l'Ajuntament?",
+    "confirmReject": "Segur que vols rebutjar aquest report?",
+    "sendSuccess": "Report enviat correctament.",
+    "sendError": "Error en enviar el report.",
+    "location": "Ubicaci\u00f3",
+    "description": "Descripci\u00f3",
+    "hazardous": "Perillosos",
+    "status": "Estat",
+    "date": "Data",
+    "photos": "Fotos",
+    "distance": "Dist\u00e0ncia al centre",
+    "override": "Sobrepassar zona",
+    "reportDetail": "Detall del report",
+    "back": "Tornar",
+    "lastError": "\u00daltim error",
+    "deviceId": "ID dispositiu",
+    "ipHash": "Hash IP",
+    "resendId": "ID Resend",
+    "sentAt": "Enviat el"
+  },
+  "lang": {
+    "ca": "CAT",
+    "es": "ES",
+    "en": "EN"
+  }
+}

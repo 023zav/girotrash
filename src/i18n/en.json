@@ -1,0 +1,102 @@
+{
+  "app": {
+    "title": "GiroTrash",
+    "subtitle": "Report illegal dumps in Girona"
+  },
+  "map": {
+    "locating": "Getting location...",
+    "locationError": "Could not get your location. Enable geolocation.",
+    "outsideArea": "You are outside the Girona service area (5 km). Move the marker inside the zone.",
+    "tapToPlace": "Tap the map to mark the dump site",
+    "dragToAdjust": "Drag the marker to adjust",
+    "retry": "Retry",
+    "continue": "Continue",
+    "insideArea": "Inside service area",
+    "locateMe": "Locate me"
+  },
+  "photos": {
+    "title": "Photos",
+    "subtitle": "Add up to 5 photos of the dump",
+    "add": "Add photo",
+    "remove": "Remove",
+    "required": "At least one photo is required",
+    "maxReached": "Maximum 5 photos",
+    "compressing": "Compressing...",
+    "tooLarge": "Photo is too large",
+    "back": "Back",
+    "continue": "Continue",
+    "count": "{{count}}/5 photos"
+  },
+  "details": {
+    "title": "Details",
+    "description": "Description",
+    "descriptionPlaceholder": "Describe the dump: type of waste, approximate size, accessibility...",
+    "hazardous": "Potentially hazardous",
+    "hazardousHelp": "Contains hazardous materials (asbestos, chemicals, etc.)",
+    "back": "Back",
+    "submit": "Submit report",
+    "submitting": "Submitting..."
+  },
+  "confirm": {
+    "title": "Report submitted!",
+    "message": "Thank you for helping keep Girona clean. Your report will be reviewed by the team.",
+    "status": "Pending review",
+    "reportCode": "Report code",
+    "newReport": "New report",
+    "copyCode": "Copy code"
+  },
+  "errors": {
+    "generic": "An error occurred. Please try again.",
+    "network": "Connection error. Check your internet connection.",
+    "outsideArea": "Location is outside the Girona service area.",
+    "tooManyRequests": "Too many reports submitted. Please wait a while.",
+    "uploadFailed": "Error uploading photos. Please try again.",
+    "noPhotos": "At least one photo is required.",
+    "noLocation": "Please select a location on the map."
+  },
+  "admin": {
+    "login": "Log in",
+    "logout": "Log out",
+    "email": "Email",
+    "password": "Password",
+    "loginError": "Authentication error. Check your credentials.",
+    "notAdmin": "You do not have administrator permissions.",
+    "dashboard": "Admin Dashboard",
+    "pending": "Pending",
+    "sent": "Sent",
+    "rejected": "Rejected",
+    "all": "All",
+    "noReports": "No reports.",
+    "approve": "Approve & send",
+    "reject": "Reject",
+    "delete": "Delete",
+    "edit": "Edit",
+    "save": "Save",
+    "cancel": "Cancel",
+    "confirmDelete": "Are you sure you want to delete this report?",
+    "confirmApprove": "Approve and send the report to the City Council?",
+    "confirmReject": "Are you sure you want to reject this report?",
+    "sendSuccess": "Report sent successfully.",
+    "sendError": "Error sending report.",
+    "location": "Location",
+    "description": "Description",
+    "hazardous": "Hazardous",
+    "status": "Status",
+    "date": "Date",
+    "photos": "Photos",
+    "distance": "Distance to center",
+    "override": "Override zone",
+    "reportDetail": "Report detail",
+    "back": "Back",
+    "lastError": "Last error",
+    "deviceId": "Device ID",
+    "ipHash": "IP Hash",
+    "resendId": "Resend ID",
+    "sentAt": "Sent at"
+  },
+  "lang": {
+    "ca": "CAT",
+    "es": "ES",
+    "en": "EN"
+  }
+}

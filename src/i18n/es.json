@@ -1,0 +1,102 @@
+{
+  "app": {
+    "title": "GiroTrash",
+    "subtitle": "Reporta vertederos ilegales en Girona"
+  },
+  "map": {
+    "locating": "Obteniendo ubicaci\u00f3n...",
+    "locationError": "No se ha podido obtener la ubicaci\u00f3n. Activa la geolocalizaci\u00f3n.",
+    "outsideArea": "Est\u00e1s fuera de la zona de servicio de Girona (5 km). Mueve el marcador dentro de la zona.",
+    "tapToPlace": "Toca el mapa para marcar el vertedero",
+    "dragToAdjust": "Arrastra el marcador para ajustar",
+    "retry": "Reintentar",
+    "continue": "Continuar",
+    "insideArea": "Dentro de la zona de servicio",
+    "locateMe": "Localiz\u00e1me"
+  },
+  "photos": {
+    "title": "Fotos",
+    "subtitle": "A\u00f1ade hasta 5 fotos del vertedero",
+    "add": "A\u00f1adir foto",
+    "remove": "Eliminar",
+    "required": "Se necesita al menos una foto",
+    "maxReached": "M\u00e1ximo 5 fotos",
+    "compressing": "Comprimiendo...",
+    "tooLarge": "La foto es demasiado grande",
+    "back": "Atr\u00e1s",
+    "continue": "Continuar",
+    "count": "{{count}}/5 fotos"
+  },
+  "details": {
+    "title": "Detalles",
+    "description": "Descripci\u00f3n",
+    "descriptionPlaceholder": "Describe el vertedero: tipo de residuos, tama\u00f1o aproximado, accesibilidad...",
+    "hazardous": "Potencialmente peligroso",
+    "hazardousHelp": "Contiene materiales peligrosos (amianto, productos qu\u00edmicos, etc.)",
+    "back": "Atr\u00e1s",
+    "submit": "Enviar reporte",
+    "submitting": "Enviando..."
+  },
+  "confirm": {
+    "title": "\u00a1Reporte enviado!",
+    "message": "Gracias por contribuir a mantener Girona limpia. Tu reporte ser\u00e1 revisado por el equipo.",
+    "status": "Pendiente de revisi\u00f3n",
+    "reportCode": "C\u00f3digo del reporte",
+    "newReport": "Nuevo reporte",
+    "copyCode": "Copiar c\u00f3digo"
+  },
+  "errors": {
+    "generic": "Se ha producido un error. Int\u00e9ntalo de nuevo.",
+    "network": "Error de conexi\u00f3n. Comprueba tu conexi\u00f3n a internet.",
+    "outsideArea": "La ubicaci\u00f3n est\u00e1 fuera de la zona de servicio de Girona.",
+    "tooManyRequests": "Has enviado demasiados reportes. Espera un rato.",
+    "uploadFailed": "Error subiendo las fotos. Int\u00e9ntalo de nuevo.",
+    "noPhotos": "Se necesita a\u00f1adir al menos una foto.",
+    "noLocation": "Se necesita seleccionar una ubicaci\u00f3n en el mapa."
+  },
+  "admin": {
+    "login": "Iniciar sesi\u00f3n",
+    "logout": "Cerrar sesi\u00f3n",
+    "email": "Correo electr\u00f3nico",
+    "password": "Contrase\u00f1a",
+    "loginError": "Error de autenticaci\u00f3n. Comprueba las credenciales.",
+    "notAdmin": "No tienes permisos de administrador.",
+    "dashboard": "Panel de administraci\u00f3n",
+    "pending": "Pendientes",
+    "sent": "Enviados",
+    "rejected": "Rechazados",
+    "all": "Todos",
+    "noReports": "No hay reportes.",
+    "approve": "Aprobar y enviar",
+    "reject": "Rechazar",
+    "delete": "Eliminar",
+    "edit": "Editar",
+    "save": "Guardar",
+    "cancel": "Cancelar",
+    "confirmDelete": "\u00bfSeguro que quieres eliminar este reporte?",
+    "confirmApprove": "\u00bfAprobar y enviar el reporte al Ayuntamiento?",
+    "confirmReject": "\u00bfSeguro que quieres rechazar este reporte?",
+    "sendSuccess": "Reporte enviado correctamente.",
+    "sendError": "Error al enviar el reporte.",
+    "location": "Ubicaci\u00f3n",
+    "description": "Descripci\u00f3n",
+    "hazardous": "Peligroso",
+    "status": "Estado",
+    "date": "Fecha",
+    "photos": "Fotos",
+    "distance": "Distancia al centro",
+    "override": "Sobrepasar zona",
+    "reportDetail": "Detalle del reporte",
+    "back": "Volver",
+    "lastError": "\u00daltimo error",
+    "deviceId": "ID dispositivo",
+    "ipHash": "Hash IP",
+    "resendId": "ID Resend",
+    "sentAt": "Enviado el"
+  },
+  "lang": {
+    "ca": "CAT",
+    "es": "ES",
+    "en": "EN"
+  }
+}
