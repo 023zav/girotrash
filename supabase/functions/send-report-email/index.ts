@@ -3,6 +3,7 @@
 // with photos as true attachments. Updates report status.
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
+import { encode as base64Encode } from 'https://deno.land/std@0.208.0/encoding/base64.ts';
 
 // TODO: Switch back to 'residusinetejagirona@ajgirona.cat' after testing
 const RECIPIENT_EMAIL = 'az@paragonevents.gg';
@@ -151,9 +152,7 @@ Deno.serve(async (req) => {
       }
 
       const arrayBuffer = await fileData.arrayBuffer();
-      const base64 = btoa(
-        String.fromCharCode(...new Uint8Array(arrayBuffer))
-      );
+      const base64 = base64Encode(new Uint8Array(arrayBuffer));
 
       attachments.push({
         filename: `abocador_foto_${i + 1}.jpg`,
