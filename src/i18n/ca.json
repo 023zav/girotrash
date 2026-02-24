@@ -1,13 +1,13 @@
 {
   "app": {
     "title": "Girona Neta",
-    "subtitle": "Reporta abocadors il\u00b7legals a Girona"
+    "subtitle": "Ajuda a mantenir Girona neta"
   },
   "map": {
     "locating": "Obtenint ubicaci\u00f3...",
     "locationError": "No s'ha pogut obtenir la ubicaci\u00f3. Activa la geolocalitzaci\u00f3.",
     "outsideArea": "Ets fora de la zona de servei de Girona (5 km). Mou el marcador dins de la zona.",
-    "tapToPlace": "Toca el mapa per marcar l'abocador",
+    "tapToPlace": "Toca el mapa per marcar el punt",
     "dragToAdjust": "Arrossega el marcador per ajustar",
     "retry": "Reintentar",
     "continue": "Continuar",
@@ -16,7 +16,7 @@
   },
   "photos": {
     "title": "Fotos",
-    "subtitle": "Afegeix fins a 5 fotos de l'abocador",
+    "subtitle": "Afegeix fins a 5 fotos dels residus",
     "add": "Afegir foto",
     "takePhoto": "Fer foto",
     "fromGallery": "Galeria",
@@ -32,7 +32,7 @@
   "details": {
     "title": "Detalls",
     "description": "Descripci\u00f3",
-    "descriptionPlaceholder": "Descriu l'abocador: tipus de residus, mida aproximada, accessibilitat...",
+    "descriptionPlaceholder": "Descriu el problema: tipus de residus, mida aproximada, accessibilitat...",
     "hazardous": "Potencialment perillosos",
     "hazardousHelp": "Cont\u00e9 materials perillosos (amiant, productes qu\u00edmics, etc.)",
     "back": "Enrere",

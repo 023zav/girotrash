@@ -1,13 +1,13 @@
 {
   "app": {
     "title": "Girona Neta",
-    "subtitle": "Report illegal dumps in Girona"
+    "subtitle": "Help keep Girona clean"
   },
   "map": {
     "locating": "Getting location...",
     "locationError": "Could not get your location. Enable geolocation.",
     "outsideArea": "You are outside the Girona service area (5 km). Move the marker inside the zone.",
-    "tapToPlace": "Tap the map to mark the dump site",
+    "tapToPlace": "Tap the map to mark the spot",
     "dragToAdjust": "Drag the marker to adjust",
     "retry": "Retry",
     "continue": "Continue",
@@ -16,7 +16,7 @@
   },
   "photos": {
     "title": "Photos",
-    "subtitle": "Add up to 5 photos of the dump",
+    "subtitle": "Add up to 5 photos of the waste",
     "add": "Add photo",
     "takePhoto": "Take photo",
     "fromGallery": "Gallery",
@@ -32,7 +32,7 @@
   "details": {
     "title": "Details",
     "description": "Description",
-    "descriptionPlaceholder": "Describe the dump: type of waste, approximate size, accessibility...",
+    "descriptionPlaceholder": "Describe the issue: type of waste, approximate size, accessibility...",
     "hazardous": "Potentially hazardous",
     "hazardousHelp": "Contains hazardous materials (asbestos, chemicals, etc.)",
     "back": "Back",

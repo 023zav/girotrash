@@ -20,32 +20,28 @@ const EMAIL_TEMPLATES = {
   ca: {
     subject: (hazardous: boolean) =>
       hazardous
-        ? '⚠ Report d\'abocador il·legal (materials perillosos) — Girona Neta'
-        : 'Report d\'abocador il·legal — Girona Neta',
+        ? '⚠ Avís de residus acumulats (possibles materials perillosos)'
+        : 'Avís de residus acumulats a la via pública',
     body: (report: ReportData) => `Bon dia,
 
-Us escrivim per comunicar-vos la detecció d'un abocador il·legal dins del terme municipal de Girona.
+Us escrivim per informar-vos que s'han detectat residus acumulats a la via pública dins del terme municipal de Girona que caldria retirar.
 
 📍 UBICACIÓ
 ${report.address_label ? `Adreça aproximada: ${report.address_label}` : ''}
 Coordenades: ${report.lat.toFixed(6)}, ${report.lon.toFixed(6)}
-Distància al centre: ${report.distance_to_girona_m}m
 Veure al mapa: https://www.openstreetmap.org/?mlat=${report.lat}&mlon=${report.lon}#map=18/${report.lat}/${report.lon}
 
 📝 DESCRIPCIÓ
 ${report.description || '(Sense descripció)'}
 
-${report.potentially_hazardous ? '⚠ ATENCIÓ: El reportant ha indicat que podria contenir materials perillosos (amiant, productes químics, etc.).\n' : ''}
+${report.potentially_hazardous ? '⚠ ATENCIÓ: La persona que ha fet l\'avís ha indicat que podria contenir materials perillosos (amiant, productes químics, etc.).\n' : ''}
 📸 FOTOS
-S'adjunten ${report.photo_count} foto${report.photo_count > 1 ? 's' : ''} de l'abocador.
+S'adjunten ${report.photo_count} foto${report.photo_count > 1 ? 's' : ''}.
 
----
-Aquest report ha estat enviat des de l'aplicació Girona Neta (gironaneta.cat).
-Codi del report: ${report.id}
-Data del report: ${new Date(report.created_at).toLocaleString('ca-ES', { timeZone: 'Europe/Madrid' })}
+Codi de referència: ${report.id}
+Data de l'avís: ${new Date(report.created_at).toLocaleString('ca-ES', { timeZone: 'Europe/Madrid' })}
 
-Gràcies per la vostra atenció.
-Girona Neta — gironaneta.cat`,
+Gràcies per la vostra atenció.`,
   },
 };
 

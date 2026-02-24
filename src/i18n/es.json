@@ -1,13 +1,13 @@
 {
   "app": {
     "title": "Girona Neta",
-    "subtitle": "Reporta vertederos ilegales en Girona"
+    "subtitle": "Ayuda a mantener Girona limpia"
   },
   "map": {
     "locating": "Obteniendo ubicaci\u00f3n...",
     "locationError": "No se ha podido obtener la ubicaci\u00f3n. Activa la geolocalizaci\u00f3n.",
     "outsideArea": "Est\u00e1s fuera de la zona de servicio de Girona (5 km). Mueve el marcador dentro de la zona.",
-    "tapToPlace": "Toca el mapa para marcar el vertedero",
+    "tapToPlace": "Toca el mapa para marcar el punto",
     "dragToAdjust": "Arrastra el marcador para ajustar",
     "retry": "Reintentar",
     "continue": "Continuar",
@@ -16,7 +16,7 @@
   },
   "photos": {
     "title": "Fotos",
-    "subtitle": "A\u00f1ade hasta 5 fotos del vertedero",
+    "subtitle": "A\u00f1ade hasta 5 fotos de los residuos",
     "add": "A\u00f1adir foto",
     "takePhoto": "Hacer foto",
     "fromGallery": "Galer\u00eda",
@@ -32,7 +32,7 @@
   "details": {
     "title": "Detalles",
     "description": "Descripci\u00f3n",
-    "descriptionPlaceholder": "Describe el vertedero: tipo de residuos, tama\u00f1o aproximado, accesibilidad...",
+    "descriptionPlaceholder": "Describe el problema: tipo de residuos, tama\u00f1o aproximado, accesibilidad...",
     "hazardous": "Potencialmente peligroso",
     "hazardousHelp": "Contiene materiales peligrosos (amianto, productos qu\u00edmicos, etc.)",
     "back": "Atr\u00e1s",
