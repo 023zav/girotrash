@@ -91,11 +91,16 @@ export default function AdminReportDetail() {
     setError('');
     setSuccess('');
     try {
-      await adminUpdateReport(id, { status: 'approved_sending' });
       await adminSendReport(id);
       setSuccess(t('admin.sendSuccess'));
       await loadReport();
     } catch (err) {
+      // Revert status to pending_review so admin can retry
+      try {
+        await adminUpdateReport(id, { status: 'pending_review' });
+      } catch {
+        // ignore revert failure
+      }
       setError(
         err instanceof Error ? err.message : t('admin.sendError')
       );
@@ -363,7 +368,7 @@ export default function AdminReportDetail() {
               {t('admin.edit')}
             </button>
 
-            {report.status === 'pending_review' && (
+            {(report.status === 'pending_review' || report.status === 'approved_sending') && (
               <button
                 className="btn btn-primary btn-small"
                 onClick={handleApprove}
@@ -372,12 +377,14 @@ export default function AdminReportDetail() {
                 {actionLoading === 'approve' ? (
                   <div className="spinner" />
                 ) : (
-                  t('admin.approve')
+                  report.status === 'approved_sending'
+                    ? t('admin.retry')
+                    : t('admin.approve')
                 )}
               </button>
             )}
 
-            {report.status === 'pending_review' && (
+            {(report.status === 'pending_review' || report.status === 'approved_sending') && (
               <button
                 className="btn btn-danger btn-small"
                 onClick={handleReject}

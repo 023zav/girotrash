@@ -70,6 +70,7 @@
     "all": "Tots",
     "noReports": "No hi ha reports.",
     "approve": "Aprovar i enviar",
+    "retry": "Reintentar enviament",
     "reject": "Rebutjar",
     "delete": "Eliminar",
     "edit": "Editar",

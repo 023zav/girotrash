@@ -70,6 +70,7 @@
     "all": "Todos",
     "noReports": "No hay reportes.",
     "approve": "Aprobar y enviar",
+    "retry": "Reintentar env\u00edo",
     "reject": "Rechazar",
     "delete": "Eliminar",
     "edit": "Editar",

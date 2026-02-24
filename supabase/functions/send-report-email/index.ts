@@ -79,29 +79,24 @@ Deno.serve(async (req) => {
     // ── Authenticate admin ───────────────────────────────────────────
     const authHeader = req.headers.get('Authorization');
     if (!authHeader) {
-      return jsonError('Unauthorized', 401);
+      return jsonError('Unauthorized: no auth header', 401);
     }
 
     const supabaseUrl = Deno.env.get('SUPABASE_URL')!;
     const serviceRoleKey = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')!;
+    const adminClient = createClient(supabaseUrl, serviceRoleKey);
 
-    // Verify JWT with anon client
-    const anonKey = Deno.env.get('SUPABASE_ANON_KEY')!;
-    const userClient = createClient(supabaseUrl, anonKey, {
-      global: { headers: { Authorization: authHeader } },
-    });
-
+    // Extract JWT token and verify user
+    const token = authHeader.replace('Bearer ', '');
     const {
       data: { user },
       error: authError,
-    } = await userClient.auth.getUser();
+    } = await adminClient.auth.getUser(token);
 
     if (authError || !user) {
-      return jsonError('Unauthorized', 401);
+      console.error('Auth error:', authError?.message);
+      return jsonError(`Unauthorized: ${authError?.message || 'invalid token'}`, 401);
     }
-
-    // Check admin allowlist
-    const adminClient = createClient(supabaseUrl, serviceRoleKey);
 
     // Check against DB allowlist
     const { data: adminEntry } = await adminClient
