@@ -4,7 +4,8 @@
 
 import { createClient } from 'https://esm.sh/@supabase/supabase-js@2';
 
-const RECIPIENT_EMAIL = 'residusinetejagirona@ajgirona.cat';
+// TODO: Switch back to 'residusinetejagirona@ajgirona.cat' after testing
+const RECIPIENT_EMAIL = 'az@paragonevents.gg';
 const RESEND_API_URL = 'https://api.resend.com/emails';
 
 const corsHeaders = {
