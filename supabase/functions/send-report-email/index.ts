@@ -151,7 +151,7 @@ Deno.serve(async (req) => {
       const base64 = base64Encode(new Uint8Array(arrayBuffer));
 
       attachments.push({
-        filename: `abocador_foto_${i + 1}.jpg`,
+        filename: `foto_${i + 1}.jpg`,
         content: base64,
       });
     }

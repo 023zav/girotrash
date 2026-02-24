@@ -131,8 +131,7 @@ export default function AdminDashboard() {
                     }}
                   >
                     {formatDate(report.created_at)} &middot;{' '}
-                    {report.report_media?.length || 0} {t('admin.photos').toLowerCase()} &middot;{' '}
-                    {report.distance_to_girona_m}m
+                    {report.report_media?.length || 0} {t('admin.photos').toLowerCase()}
                   </div>
                 </div>
                 <span className={`status-badge ${report.status}`}>

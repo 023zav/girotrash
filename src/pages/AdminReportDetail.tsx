@@ -9,6 +9,7 @@ import {
   adminSendReport,
   adminGetSignedUrl,
 } from '../lib/api';
+import LanguageBar from '../components/LanguageBar';
 import type { ReportWithMedia } from '../types';
 
 export default function AdminReportDetail() {
@@ -158,6 +159,7 @@ export default function AdminReportDetail() {
 
   return (
     <div className="admin-layout">
+      <LanguageBar />
       <div className="admin-header">
         <button
           className="btn-ghost"
@@ -185,10 +187,6 @@ export default function AdminReportDetail() {
           <p>{report.address_label || '—'}</p>
           <p style={{ fontSize: 13, color: 'var(--c-text-secondary)', fontFamily: 'monospace' }}>
             {report.lat.toFixed(6)}, {report.lon.toFixed(6)}
-          </p>
-          <p style={{ fontSize: 13, color: 'var(--c-text-secondary)' }}>
-            {t('admin.distance')}: {report.distance_to_girona_m}m
-            {!report.inside_service_area && ' (outside)'}
           </p>
           <a
             href={`https://www.openstreetmap.org/?mlat=${report.lat}&mlon=${report.lon}#map=18/${report.lat}/${report.lon}`}
