@@ -20,28 +20,42 @@ const EMAIL_TEMPLATES = {
   ca: {
     subject: (hazardous: boolean) =>
       hazardous
-        ? '⚠ Avís de residus acumulats (possibles materials perillosos)'
-        : 'Avís de residus acumulats a la via pública',
-    body: (report: ReportData) => `Bon dia,
+        ? '⚠ Avís de residus (possibles materials perillosos)'
+        : 'Avís de residus a Girona',
+    body: (report: ReportData) => {
+      let text = `Bon dia,
 
-Us escrivim per informar-vos que s'han detectat residus acumulats a la via pública dins del terme municipal de Girona que caldria retirar.
+Malauradament, hem detectat una acumulació de residus que caldria retirar.
 
 📍 UBICACIÓ
-${report.address_label ? `Adreça aproximada: ${report.address_label}` : ''}
-Coordenades: ${report.lat.toFixed(6)}, ${report.lon.toFixed(6)}
+${report.address_label ? `Adreça aproximada: ${report.address_label}\n` : ''}Coordenades: ${report.lat.toFixed(6)}, ${report.lon.toFixed(6)}
 Veure al mapa: https://www.openstreetmap.org/?mlat=${report.lat}&mlon=${report.lon}#map=18/${report.lat}/${report.lon}
+`;
 
+      if (report.description) {
+        text += `
 📝 DESCRIPCIÓ
-${report.description || '(Sense descripció)'}
+${report.description}
+`;
+      }
 
-${report.potentially_hazardous ? '⚠ ATENCIÓ: La persona que ha fet l\'avís ha indicat que podria contenir materials perillosos (amiant, productes químics, etc.).\n' : ''}
+      if (report.potentially_hazardous) {
+        text += `
+⚠ ATENCIÓ: La persona que ha fet l'avís ha indicat que podria contenir materials perillosos (amiant, productes químics, etc.).
+`;
+      }
+
+      text += `
 📸 FOTOS
 S'adjunten ${report.photo_count} foto${report.photo_count > 1 ? 's' : ''}.
 
 Codi de referència: ${report.id}
 Data de l'avís: ${new Date(report.created_at).toLocaleString('ca-ES', { timeZone: 'Europe/Madrid' })}
 
-Gràcies per la vostra atenció.`,
+Gràcies per la vostra atenció.`;
+
+      return text;
+    },
   },
 };
 
