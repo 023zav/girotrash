@@ -1,0 +1,6 @@
+name = "email-reply-worker"
+main = "email-worker.js"
+compatibility_date = "2024-09-01"
+
+[vars]
+SUPABASE_URL = "https://fdnfkgfsxwqikfzebadv.supabase.co"

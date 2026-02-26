@@ -32,7 +32,7 @@ Deno.serve(async (req) => {
       lat,
       lon,
       description,
-      potentially_hazardous,
+      category,
       photo_count,
       honeypot,
       device_id,
@@ -56,6 +56,9 @@ Deno.serve(async (req) => {
     }
     if (typeof photo_count !== 'number' || photo_count < 1 || photo_count > MAX_PHOTOS) {
       return jsonError(`photo_count must be 1-${MAX_PHOTOS}`, 400);
+    }
+    if (category !== 'waste' && category !== 'litter') {
+      return jsonError('category must be "waste" or "litter"', 400);
     }
 
     // ── Geofence ───────────────────────────────────────────────────
@@ -101,7 +104,7 @@ Deno.serve(async (req) => {
         distance_to_girona_m: Math.round(distance),
         inside_service_area: insideServiceArea,
         description: description || null,
-        potentially_hazardous: !!potentially_hazardous,
+        category,
         ip_hash: ipHash,
         user_device_id: device_id || null,
         status: 'pending_review',

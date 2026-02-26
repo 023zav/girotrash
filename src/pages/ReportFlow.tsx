@@ -3,7 +3,9 @@ import { useTranslation } from 'react-i18next';
 import LanguageBar from '../components/LanguageBar';
 import MapView from '../components/MapView';
 import PhotoCapture from '../components/PhotoCapture';
+import { Trans } from 'react-i18next';
 import type { CompressedPhoto } from '../lib/compress';
+import type { ReportCategory } from '../types';
 import { revokePhotoPreviews } from '../lib/compress';
 import { isInsideServiceArea, getDeviceId } from '../lib/constants';
 import { createReport, uploadPhoto, reverseGeocode } from '../lib/api';
@@ -23,7 +25,7 @@ export default function ReportFlow() {
   const [address, setAddress] = useState('');
   const [photos, setPhotos] = useState<CompressedPhoto[]>([]);
   const [description, setDescription] = useState('');
-  const [hazardous, setHazardous] = useState(false);
+  const [category, setCategory] = useState<ReportCategory | null>(null);
   const [honeypot, setHoneypot] = useState('');
 
   // UI state
@@ -70,7 +72,7 @@ export default function ReportFlow() {
         lat,
         lon,
         description: description.trim(),
-        potentially_hazardous: hazardous,
+        category: category!,
         photo_count: photos.length,
         honeypot: honeypot || undefined,
         device_id: getDeviceId(),
@@ -120,7 +122,7 @@ export default function ReportFlow() {
     setAddress('');
     setPhotos([]);
     setDescription('');
-    setHazardous(false);
+    setCategory(null);
     setHoneypot('');
     setError('');
     setReportId('');
@@ -240,20 +242,41 @@ export default function ReportFlow() {
           </div>
 
           <div className="form-group">
-            <div className="toggle-row">
+            <label className="form-label">{t('details.category')}</label>
+            <div className="category-picker">
               <button
-                className={`toggle-track ${hazardous ? 'on' : ''}`}
-                onClick={() => setHazardous(!hazardous)}
-                role="switch"
-                aria-checked={hazardous}
-              />
-              <div>
-                <div className="toggle-label">{t('details.hazardous')}</div>
-                <div className="toggle-help">
-                  {t('details.hazardousHelp')}
+                type="button"
+                className={`category-card ${category === 'waste' ? 'selected' : ''}`}
+                onClick={() => setCategory('waste')}
+              >
+                <div className="category-card-icon">&#128465;</div>
+                <div className="category-card-text">
+                  <h3>{t('details.categoryWaste')}</h3>
+                  <p>{t('details.categoryWasteHelp')}</p>
                 </div>
-              </div>
+              </button>
+              <button
+                type="button"
+                className={`category-card ${category === 'litter' ? 'selected' : ''}`}
+                onClick={() => setCategory('litter')}
+              >
+                <div className="category-card-icon">&#129529;</div>
+                <div className="category-card-text">
+                  <h3>{t('details.categoryLitter')}</h3>
+                  <p>{t('details.categoryLitterHelp')}</p>
+                </div>
+              </button>
             </div>
+          </div>
+
+          <div className="privacy-notice">
+            <Trans
+              i18nKey="details.privacy"
+              components={{
+                mail: <a href="mailto:info@gironaneta.cat" />,
+                privacy: <a href="/privacy" target="_blank" rel="noopener noreferrer" />,
+              }}
+            />
           </div>
 
           {/* Honeypot — hidden from real users */}
@@ -293,7 +316,7 @@ export default function ReportFlow() {
           </button>
           <button
             className="btn btn-primary"
-            disabled={submitting}
+            disabled={submitting || !category}
             onClick={handleSubmit}
           >
             {submitting ? (

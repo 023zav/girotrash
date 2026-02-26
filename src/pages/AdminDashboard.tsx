@@ -8,7 +8,8 @@ import type { ReportWithMedia, ReportStatus } from '../types';
 
 const tabs: { key: string; statuses: ReportStatus[] | null }[] = [
   { key: 'pending', statuses: ['pending_review'] },
-  { key: 'sent', statuses: ['approved_sending', 'sent', 'replied'] },
+  { key: 'sent', statuses: ['approved_sending', 'sent'] },
+  { key: 'feedback', statuses: ['replied'] },
   { key: 'rejected', statuses: ['rejected'] },
   { key: 'all', statuses: null },
 ];
@@ -38,11 +39,20 @@ export default function AdminDashboard() {
           tab.statuses.map((s) => adminGetReports(s))
         );
         data = results.flat() as ReportWithMedia[];
-        data.sort(
-          (a, b) =>
-            new Date(b.created_at).getTime() -
-            new Date(a.created_at).getTime()
-        );
+        // Feedback tab: sort by replied_at (freshest reply on top)
+        if (tab.key === 'feedback') {
+          data.sort(
+            (a, b) =>
+              new Date(b.replied_at || b.sent_at || b.created_at).getTime() -
+              new Date(a.replied_at || a.sent_at || a.created_at).getTime()
+          );
+        } else {
+          data.sort(
+            (a, b) =>
+              new Date(b.created_at).getTime() -
+              new Date(a.created_at).getTime()
+          );
+        }
       } else {
         data = (await adminGetReports()) as ReportWithMedia[];
       }
@@ -108,7 +118,7 @@ export default function AdminDashboard() {
               color: 'var(--c-text-secondary)',
             }}
           >
-            {t('admin.noReports')}
+            {activeTab === 'feedback' ? t('admin.noFeedback') : t('admin.noReports')}
           </div>
         ) : (
           reports.map((report) => (
@@ -153,17 +163,10 @@ export default function AdminDashboard() {
                   {report.description}
                 </p>
               )}
-              {report.potentially_hazardous && (
-                <span
-                  style={{
-                    display: 'inline-block',
-                    marginTop: 6,
-                    fontSize: 12,
-                    color: 'var(--c-danger)',
-                    fontWeight: 600,
-                  }}
-                >
-                  ⚠ {t('admin.hazardous')}
+              {report.category && (
+                <span className={`category-badge ${report.category}`} style={{ marginTop: 6 }}>
+                  {report.category === 'waste' ? '🗑️' : '🧹'}{' '}
+                  {t(`admin.category${report.category === 'waste' ? 'Waste' : 'Litter'}`)}
                 </span>
               )}
             </div>

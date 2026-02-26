@@ -452,6 +452,150 @@ select {
   display: none;
 }
 
+/* Category picker */
+.category-picker {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.category-card {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  padding: 16px;
+  border: 2px solid var(--c-border);
+  border-radius: var(--radius);
+  background: var(--c-surface);
+  cursor: pointer;
+  transition: all 0.15s;
+  text-align: left;
+  width: 100%;
+}
+
+.category-card:active {
+  transform: scale(0.98);
+}
+
+.category-card.selected {
+  border-color: var(--c-primary);
+  background: var(--c-success-bg);
+}
+
+.category-card-icon {
+  font-size: 24px;
+  flex-shrink: 0;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.category-card-text h3 {
+  font-size: 15px;
+  font-weight: 600;
+  margin-bottom: 2px;
+}
+
+.category-card-text p {
+  font-size: 13px;
+  color: var(--c-text-secondary);
+}
+
+/* Privacy notice */
+.privacy-notice {
+  font-size: 12px;
+  color: var(--c-text-secondary);
+  line-height: 1.5;
+  margin-top: 16px;
+  padding: 12px 14px;
+  background: var(--c-bg);
+  border-radius: var(--radius-sm);
+}
+
+.privacy-notice a {
+  color: var(--c-primary);
+  text-decoration: underline;
+}
+
+/* Category badge */
+.category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.category-badge.waste {
+  background: #fff3e0;
+  color: #e65100;
+}
+
+.category-badge.litter {
+  background: #e8eaf6;
+  color: #283593;
+}
+
+/* Privacy policy page */
+.privacy-page {
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 24px 20px;
+}
+
+.privacy-page h1 {
+  font-size: 22px;
+  color: var(--c-primary-dark);
+  margin-bottom: 20px;
+}
+
+.privacy-page h2 {
+  font-size: 16px;
+  color: var(--c-text);
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.privacy-page p {
+  font-size: 14px;
+  color: var(--c-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.privacy-page a {
+  color: var(--c-primary);
+}
+
+/* Reply box */
+.reply-box {
+  background: #e3f2fd;
+  border-left: 4px solid #1565c0;
+  border-radius: var(--radius-sm);
+  padding: 14px 16px;
+}
+
+.reply-box-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 8px;
+  font-size: 12px;
+  color: #1565c0;
+  font-weight: 600;
+}
+
+.reply-box-body {
+  font-size: 14px;
+  color: var(--c-text);
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
 /* Confirmation screen */
 .confirm-screen {
   display: flex;

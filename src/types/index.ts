@@ -6,6 +6,8 @@ export type ReportStatus =
   | 'rejected'
   | 'deleted';
 
+export type ReportCategory = 'waste' | 'litter';
+
 export interface Report {
   id: string;
   created_at: string;
@@ -16,11 +18,13 @@ export interface Report {
   inside_service_area: boolean;
   address_label: string | null;
   description: string | null;
-  potentially_hazardous: boolean;
+  category: ReportCategory;
   email_lang: 'ca' | 'es' | 'en';
-  email_subject: string | null;
-  resend_message_id: string | null;
+  fcc_incident_id: string | null;
   sent_at: string | null;
+  reply_text: string | null;
+  reply_from: string | null;
+  replied_at: string | null;
   admin_override: boolean;
   user_device_id: string | null;
   ip_hash: string | null;
@@ -46,7 +50,7 @@ export interface CreateReportPayload {
   lat: number;
   lon: number;
   description: string;
-  potentially_hazardous: boolean;
+  category: ReportCategory;
   photo_count: number;
   honeypot?: string;
   device_id?: string;

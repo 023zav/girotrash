@@ -215,10 +215,13 @@ export default function AdminReportDetail() {
           )}
         </div>
 
-        {/* Hazardous */}
+        {/* Category */}
         <div className="admin-detail-section">
-          <h3>{t('admin.hazardous')}</h3>
-          <p>{report.potentially_hazardous ? '⚠ Yes' : 'No'}</p>
+          <h3>{t('admin.category')}</h3>
+          <span className={`category-badge ${report.category}`}>
+            {report.category === 'waste' ? '🗑️' : '🧹'}{' '}
+            {t(`admin.category${report.category === 'waste' ? 'Waste' : 'Litter'}`)}
+          </span>
         </div>
 
         {/* Admin override */}
@@ -277,12 +280,32 @@ export default function AdminReportDetail() {
           </div>
         )}
 
-        {report.resend_message_id && (
+        {report.fcc_incident_id && (
           <div className="admin-detail-section">
-            <h3>{t('admin.resendId')}</h3>
+            <h3>{t('admin.fccId')}</h3>
             <p style={{ fontFamily: 'monospace', fontSize: 13 }}>
-              {report.resend_message_id}
+              {report.fcc_incident_id}
             </p>
+          </div>
+        )}
+
+        {/* Reply from municipality */}
+        {report.reply_text && (
+          <div className="admin-detail-section">
+            <h3>{t('admin.feedback')}</h3>
+            <div className="reply-box">
+              <div className="reply-box-header">
+                <span>{t('admin.replyFrom')}: {report.reply_from || '—'}</span>
+                {report.replied_at && (
+                  <span style={{ marginLeft: 'auto', fontSize: 12, color: 'var(--c-text-secondary)' }}>
+                    {new Date(report.replied_at).toLocaleString()}
+                  </span>
+                )}
+              </div>
+              <div className="reply-box-body">
+                {report.reply_text}
+              </div>
+            </div>
           </div>
         )}
 
