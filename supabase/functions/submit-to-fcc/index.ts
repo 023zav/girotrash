@@ -152,7 +152,7 @@ Deno.serve(async (req) => {
     formData.append('observations', observations);
     formData.append('file', photoBlob, 'foto_1.jpg');
     formData.append('filename', 'foto_1.jpg');
-    formData.append('language', 'ca');
+    formData.append('language', '1');
     formData.append('lat', report.lat.toString());
     formData.append('lng', report.lon.toString());
     formData.append('type', categoryConfig.type);
