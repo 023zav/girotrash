@@ -10,7 +10,7 @@
     "tapToPlace": "Toca el mapa para marcar el punto",
     "dragToAdjust": "Arrastra el marcador para ajustar",
     "retry": "Reintentar",
-    "continue": "Continuar",
+    "continue": "Reportar basura",
     "insideArea": "Dentro de la zona de servicio",
     "locateMe": "Localiz\u00e1me"
   },
@@ -26,7 +26,7 @@
     "compressing": "Comprimiendo...",
     "tooLarge": "La foto es demasiado grande",
     "back": "Atr\u00e1s",
-    "continue": "Continuar",
+    "continue": "Reportar basura",
     "count": "{{count}}/5 fotos"
   },
   "details": {

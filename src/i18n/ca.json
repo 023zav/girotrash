@@ -10,7 +10,7 @@
     "tapToPlace": "Toca el mapa per marcar el punt",
     "dragToAdjust": "Arrossega el marcador per ajustar",
     "retry": "Reintentar",
-    "continue": "Continuar",
+    "continue": "Reportar brossa",
     "insideArea": "Dins de la zona de servei",
     "locateMe": "Localitza'm"
   },
@@ -26,7 +26,7 @@
     "compressing": "Comprimint...",
     "tooLarge": "La foto \u00e9s massa gran",
     "back": "Enrere",
-    "continue": "Continuar",
+    "continue": "Reportar brossa",
     "count": "{{count}}/5 fotos"
   },
   "details": {
